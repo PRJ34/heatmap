@@ -4,6 +4,7 @@ import json
 import numpy as np
 import random
 import csv
+import sys
 
 
 # ###  interval function
@@ -55,11 +56,10 @@ def make_map(df):
 
 def export_map():
     global my_map
-    with open("map.csv", 'w', newline='') as myfile:
-        wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
-        wr.writerow(my_map)
+    with open("map.csv", "w", newline="") as myfile:
+        wr = csv.writer(myfile)
+        wr.writerows(my_map)
     print("map exported to map.csv")
-
 
 if __name__ == "__main__":
 
